@@ -14,5 +14,11 @@
     border-radius: 5px;
     flex: 3;
     padding: 10px;
+
+    &[disabled] {
+      background-color: lightgray;
+
+      cursor: not-allowed;
+    }
   }
 }

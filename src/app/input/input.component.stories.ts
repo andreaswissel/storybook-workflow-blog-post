@@ -1,5 +1,5 @@
 import {storiesOf} from '@storybook/angular';
-import {withKnobs, text} from '@storybook/addon-knobs';
+import {withKnobs, text, boolean} from '@storybook/addon-knobs';
 import {InputComponent} from './input.component';
 
 storiesOf('Input', module)
@@ -9,5 +9,13 @@ storiesOf('Input', module)
     props: {
       label: text('Label', 'The label', 'General'),
       placeholder: text('Placeholder', 'The placeholder', 'General')
+    }
+  }))
+  .add('Disabled', () => ({
+    component: InputComponent,
+    props: {
+      label: text('Label', 'The label', 'General'),
+      placeholder: text('Placeholder', 'The placeholder', 'General'),
+      disabled: boolean('Disabled', true, 'General')
     }
   }));
