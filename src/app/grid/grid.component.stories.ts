@@ -3,6 +3,12 @@ import {withKnobs, number} from '@storybook/addon-knobs';
 import {GridComponent} from './grid.component';
 import {InputComponent} from '../input/input.component';
 
+const md = `
+# The grid component
+
+It shows off some awesome content projection!
+`;
+
 const mockTemplate = `
   <app-grid [columns]="columns">
     <app-input></app-input>
@@ -23,4 +29,6 @@ storiesOf('Grid', module)
       columns: number('Columns', '2', 'General')
     },
     template: mockTemplate
-  }));
+  }), {
+    notes: md
+  });
