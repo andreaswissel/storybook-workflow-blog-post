@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/angular';
 import {withKnobs, object} from '@storybook/addon-knobs';
 import {listItems} from './list.component.mocks';
 
-storiesOf('List', module)
+storiesOf('Layout | List', module)
   .addDecorator(withKnobs)
   .add('Default', () => ({
     component: ListComponent,

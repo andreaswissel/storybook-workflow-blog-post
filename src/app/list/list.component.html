@@ -1,5 +1,18 @@
 <ul>
   <li *ngFor="let item of items">
-    {{ item.content }}
+    <span>
+        {{ item.first_name }} {{ item.last_name }}
+    </span>
+    <ul>
+      <li>
+        {{ item.email }}
+      </li>
+      <li>
+        {{ item.gender }}
+      </li>
+      <li>
+        {{ item.ip_address }}
+      </li>
+    </ul>
   </li>
 </ul>
