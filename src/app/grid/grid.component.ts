@@ -2,8 +2,19 @@ import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-grid',
-  templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.scss']
+  template: `
+    <div class="grid" [ngStyle]="{'grid-template-columns': columnsTemplate}">
+      <ng-content></ng-content>
+    </div>
+
+  `,
+  styles: [`
+    .grid {
+      display: grid;
+      grid-column-gap: 30px;
+      grid-row-gap: 10px;
+    }
+  `]
 })
 export class GridComponent {
   private _columns = 2;

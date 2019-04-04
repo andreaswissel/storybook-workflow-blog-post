@@ -17,7 +17,7 @@ const mockTemplate = `
   </app-grid>
 `;
 
-storiesOf('Grid', module)
+storiesOf('Layout | Grid', module)
   .addDecorator(withKnobs)
   .addDecorator(moduleMetadata({
       declarations: [GridComponent, InputComponent]
