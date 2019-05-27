@@ -24,5 +24,20 @@ exports.config = {
       project: require('path').join(__dirname, './tsconfig.e2e.json')
     });
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
-  }
+  },
+  plugins: [
+    {
+      // The module name
+      package: 'protractor-image-comparison',
+      // Some options, see the docs for more
+      options: {
+        baselineFolder: join(process.cwd(), './baseline/'),
+        formatImageName: `{tag}-{logName}-{width}x{height}`,
+        screenshotPath: join(process.cwd(), '.tmp/'),
+        savePerInstance: true,
+        autoSaveBaseline: true,
+        // ... more options
+      },
+    },
+  ],
 };

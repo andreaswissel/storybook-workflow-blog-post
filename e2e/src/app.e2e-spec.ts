@@ -1,8 +1,12 @@
-import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import {AppPage} from './app.po';
+import {browser, logging} from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
+
+  beforeAll(async () => {
+    // browser.driver.manage().window().maximize();
+  });
 
   beforeEach(() => {
     page = new AppPage();
@@ -11,6 +15,10 @@ describe('workspace-project App', () => {
   it('should display welcome message', () => {
     page.navigateTo();
     expect(page.getTitleText()).toEqual('Welcome to StorybookWorkflow!');
+  });
+
+  it('should look like before', async () => {
+    expect(await browser.imageComparison.checkScreen('app-component')).toEqual(0);
   });
 
   afterEach(async () => {
